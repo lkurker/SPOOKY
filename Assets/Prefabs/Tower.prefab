@@ -146,3 +146,4 @@ MonoBehaviour:
     type: 3}
   firePoint: {fileID: 1918901033}
   towerLockOn: 0
+  firePower: 2

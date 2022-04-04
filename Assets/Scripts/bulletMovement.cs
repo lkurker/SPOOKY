@@ -11,15 +11,19 @@ public class bulletMovement : MonoBehaviour
     private int lockOn;
 
     private bool collided = false;
+    public int bulletPower;
 
 
 
-    public void chaseTarget(Transform _human, int lockOnTarget)
+    public void chaseTarget(Transform _human, int lockOnTarget, int firePower)
     {
         target = _human;
 
         //we will use this mechanic to determine whether the bullet locks on or not
         lockOn = lockOnTarget;
+
+        //passing on the power of the bullets to this instance of the object
+        bulletPower = firePower;
     }
     // Start is called before the first frame update
     void Start()

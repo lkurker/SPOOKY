@@ -116,6 +116,7 @@ MonoBehaviour:
     type: 3}
   firePoint: {fileID: 1227839857272805947}
   towerLockOn: 1
+  firePower: 1
 --- !u!1 &5716312832312153672
 GameObject:
   m_ObjectHideFlags: 0

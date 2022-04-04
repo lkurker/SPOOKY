@@ -18,6 +18,7 @@ public class TowerMechanics : MonoBehaviour
     //public bool to determine if this specific tower locks on to their target or not
     public bool towerLockOn;
     private int lockOn;
+    public int firePower;
     
     
 
@@ -100,7 +101,7 @@ public class TowerMechanics : MonoBehaviour
         //if the bullet exists, call the seek method
         if(bullet != null)
         {
-            bullet.chaseTarget(target, lockOn);
+            bullet.chaseTarget(target, lockOn, firePower);
         }
 
     }

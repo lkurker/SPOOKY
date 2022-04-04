@@ -54,7 +54,7 @@ public class EnemySystems : MonoBehaviour
         //check the tag of what is entering the object
         if(other.transform.tag == "bullet")
         {
-            health--;
+            health = health - other.GetComponent<bulletMovement>().bulletPower;
         }
     }
 }

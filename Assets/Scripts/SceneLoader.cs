@@ -70,4 +70,10 @@ public class SceneLoader : MonoBehaviour
         // Debug.Log("Launch lvl 3");
     }
     
+    // back button
+    public void backButtonSelect()
+    {
+        // take user back to main menu
+        SceneManager.LoadScene("MainMenu");
+    }
 }

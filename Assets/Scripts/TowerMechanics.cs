@@ -15,12 +15,25 @@ public class TowerMechanics : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform firePoint;
 
+    //public bool to determine if this specific tower locks on to their target or not
+    public bool towerLockOn;
+    private int lockOn;
     
     
 
     // Start is called before the first frame update
     void Start()
     {
+        if(towerLockOn == true)
+        {
+            lockOn = 1;
+        }
+        else if(towerLockOn == false)
+        {
+            lockOn = 0;
+        }
+        
+
         //updating our target every half second
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
     }
@@ -87,7 +100,7 @@ public class TowerMechanics : MonoBehaviour
         //if the bullet exists, call the seek method
         if(bullet != null)
         {
-            bullet.chaseTarget(target);
+            bullet.chaseTarget(target, lockOn);
         }
 
     }

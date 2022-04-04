@@ -8,13 +8,18 @@ public class bulletMovement : MonoBehaviour
 
     public float bulletSpeed;
 
-    public bool lockOn;
+    private int lockOn;
 
     private bool collided = false;
 
-    public void chaseTarget(Transform _human)
+
+
+    public void chaseTarget(Transform _human, int lockOnTarget)
     {
         target = _human;
+
+        //we will use this mechanic to determine whether the bullet locks on or not
+        lockOn = lockOnTarget;
     }
     // Start is called before the first frame update
     void Start()
@@ -33,9 +38,11 @@ public class bulletMovement : MonoBehaviour
 
         if(collided == false)
         {
-            Debug.Log("Hello");
-            if (lockOn == true)
+            
+            if (lockOn == 1)
             {
+                Debug.Log("locked on");
+
                 Vector3 dir = target.position - transform.position;
                 float distanceThisFrame = bulletSpeed * Time.deltaTime;
 
@@ -51,7 +58,7 @@ public class bulletMovement : MonoBehaviour
                 transform.Translate(dir.normalized * distanceThisFrame, Space.World);
             }
 
-            else if (lockOn == false)
+            else if (lockOn == 0)
             {
                 transform.position += transform.forward * Time.deltaTime * bulletSpeed;
 
@@ -64,7 +71,7 @@ public class bulletMovement : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         collided = true;
-        Debug.Log("HIT");
+        
 
         if(other.transform.tag == "human")
         {
@@ -74,7 +81,6 @@ public class bulletMovement : MonoBehaviour
 
     void targetHit()
     {
-        Debug.Log("Hit???");
         Destroy(gameObject);
     }
 }

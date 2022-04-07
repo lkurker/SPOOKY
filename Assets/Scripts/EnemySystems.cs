@@ -45,7 +45,9 @@ public class EnemySystems : MonoBehaviour
         //following the checkpoints from the array of waypoints in the hierarchy
         if(wavepointIndex >= Waypoints.waypoints.Length - 1)
         {
+            HealthScript.health = HealthScript.health - health;
             Destroy(gameObject);
+            
         }
 
         if(wavepointIndex < Waypoints.waypoints.Length - 1)

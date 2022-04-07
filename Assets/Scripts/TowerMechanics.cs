@@ -13,6 +13,7 @@ public class TowerMechanics : MonoBehaviour
     private float fireCountdown = 0f;
     public float towerRange;
     public GameObject bulletPrefab;
+    public Transform partToRotate;
     public Transform firePoint;
 
     //public bool to determine if this specific tower locks on to their target or not
@@ -78,8 +79,8 @@ public class TowerMechanics : MonoBehaviour
         {
             Vector3 dir = target.position - transform.position;
             Quaternion lookRotation = Quaternion.LookRotation(dir);
-            Vector3 rotation = Quaternion.Lerp(this.gameObject.transform.rotation, lookRotation, Time.deltaTime * rotationSpeed).eulerAngles;
-            this.gameObject.transform.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+            Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * rotationSpeed).eulerAngles;
+            partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
 
             if(fireCountdown <= 0f)
             {

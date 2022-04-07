@@ -45,7 +45,7 @@ public class bulletMovement : MonoBehaviour
             
             if (lockOn == 1)
             {
-                Debug.Log("locked on");
+                
 
                 Vector3 dir = target.position - transform.position;
                 float distanceThisFrame = bulletSpeed * Time.deltaTime;

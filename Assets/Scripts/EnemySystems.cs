@@ -8,10 +8,14 @@ public class EnemySystems : MonoBehaviour
     private int wavepointIndex = 0;
     public int health;
     public int moneyValue;
+    private float halfSpeed;
 
     void Start()
     {
         target = Waypoints.waypoints[0];
+
+        //we will use the half speed variable so that the enemy won't continuously get slower if they keep getting hit by the slowdown bullets
+        halfSpeed = speed / 2;
     }
 
     void Update()
@@ -59,6 +63,24 @@ public class EnemySystems : MonoBehaviour
         if(other.transform.tag == "bullet")
         {
             health = health - other.GetComponent<bulletMovement>().bulletPower;
+        }
+
+        //instance in which the bullet type slows down the enemy
+        else if(other.transform.tag == "slowdownBullet")
+        {
+            health = health - other.GetComponent<bulletMovement>().bulletPower;
+            
+            //if the enemy hasn't already been slown down, then slow their speed down
+            if(speed != halfSpeed)
+            {
+                speed = speed / 2;
+            }
+
+        }
+
+        if(other.transform.tag == "explosion")
+        {
+            health = health - other.GetComponent<ExplosionScript>().explosionPower;
         }
     }
 }

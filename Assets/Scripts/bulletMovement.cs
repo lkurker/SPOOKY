@@ -13,6 +13,9 @@ public class bulletMovement : MonoBehaviour
     private bool collided = false;
     public int bulletPower;
 
+    //public reference to the explosion gameObject
+    public GameObject explosion;
+
 
 
     public void chaseTarget(Transform _human, int lockOnTarget, int firePower)
@@ -24,11 +27,6 @@ public class bulletMovement : MonoBehaviour
 
         //passing on the power of the bullets to this instance of the object
         bulletPower = firePower;
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
     }
 
     // Update is called once per frame
@@ -79,7 +77,16 @@ public class bulletMovement : MonoBehaviour
 
         if(other.transform.tag == "human")
         {
-            targetHit();
+            //condition for if this gameObject is a missile
+            if (this.transform.tag == "missile")
+            {
+                Instantiate(explosion, this.transform.position, this.transform.rotation);
+                targetHit();
+            }
+            else
+            {
+                targetHit();
+            }
         }
     }
 

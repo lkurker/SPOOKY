@@ -98,6 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletSpeed: 300
   bulletPower: 0
+  explosion: {fileID: 0}
 --- !u!65 &-4289512795282150953
 BoxCollider:
   m_ObjectHideFlags: 0

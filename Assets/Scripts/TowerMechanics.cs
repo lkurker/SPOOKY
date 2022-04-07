@@ -95,7 +95,6 @@ public class TowerMechanics : MonoBehaviour
 
     void Shoot()
     {
-        //spawns the bullet in once this function is called
         GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         bulletMovement bullet = bulletGO.GetComponent<bulletMovement>();
 

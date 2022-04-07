@@ -15,6 +15,9 @@ public class DragDrop : MonoBehaviour
     //this int value will be determine outside of the script, and will be passed to the node class so that it knows which tower to place
     public int towerArrayPosition;
 
+    //int for the price of the tower
+    public int towerPrice;
+
     void Start()
     {
         startingPosition = this.transform.position;
@@ -41,12 +44,14 @@ public class DragDrop : MonoBehaviour
 
         NodeScript.draggingTower = true;
         NodeScript.towerOrder = towerArrayPosition;
-        
+        NodeScript.currentTowerPrice = towerPrice;
+
     }
 
     public void EndDragMethod()
     {
         NodeScript.draggingTower = false;
+        
         this.transform.position = startingPosition;
     }
     

@@ -7,6 +7,7 @@ public class EnemySystems : MonoBehaviour
     private Transform target;
     private int wavepointIndex = 0;
     public int health;
+    public int moneyValue;
 
     void Start()
     {
@@ -18,6 +19,9 @@ public class EnemySystems : MonoBehaviour
         //if statement to determine if the enemy is dead or not
         if(health <= 0)
         {
+            //add money to the player's bank account
+            CurrencyScript.currency = CurrencyScript.currency + moneyValue;
+
             Destroy(gameObject);
 
             //return so that the rest of the code does not run
@@ -34,7 +38,7 @@ public class EnemySystems : MonoBehaviour
 
     void GetNextWayPoint()
     {
-
+        //following the checkpoints from the array of waypoints in the hierarchy
         if(wavepointIndex >= Waypoints.waypoints.Length - 1)
         {
             Destroy(gameObject);

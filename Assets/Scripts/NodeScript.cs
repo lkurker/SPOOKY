@@ -22,6 +22,8 @@ public class NodeScript : MonoBehaviour
 
     //static int to determine which of the towers to place
     public static int towerOrder;
+    //price of the current tower
+    public static int currentTowerPrice;
 
     // Start is called before the first frame update
     void Start()
@@ -31,14 +33,10 @@ public class NodeScript : MonoBehaviour
 
         //setting the tower position to this nodes position plus the offset defined by us
         towerPosition = this.transform.position + offset;
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
         
     }
+
+
 
 
     void OnMouseEnter()
@@ -62,11 +60,22 @@ public class NodeScript : MonoBehaviour
     {
         if (!Input.GetMouseButton(0) && draggingTower == true && towerPlaced == false)
         {
-            tower = towers[towerOrder];
-            Instantiate(tower, towerPosition, this.transform.rotation);
+            
+            //check to see if the player can afford to buy the tower
+            if ((CurrencyScript.currency - currentTowerPrice) >= 0)
+            {
+                //CurrencyScript.currency = CurrencyScript.currency - currentTowerPrice;
+                tower = towers[towerOrder];
+                CurrencyScript.currency = CurrencyScript.currency - currentTowerPrice;
+                Instantiate(tower, towerPosition, this.transform.rotation);
 
-            //setting the bool to true so that another tower cannot be placed on this node 
-            towerPlaced = true;
+                //setting the bool to true so that another tower cannot be placed on this node 
+                towerPlaced = true;
+
+            }
+            
+
+            
         }
 
         

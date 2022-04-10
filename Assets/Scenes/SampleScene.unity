@@ -12684,24 +12684,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1248442039}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1249668556 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9016074298054860650, guid: 52a5990be3495354aa113435e77bfcef,
-    type: 3}
-  m_PrefabInstance: {fileID: 9016074299033432742}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1249668563
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1249668556}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3751c77af84346469eb42823bb2a396, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1254347924
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19829,20 +19811,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3470155842891158098, guid: 52a5990be3495354aa113435e77bfcef,
+    - target: {fileID: 3769326123388170925, guid: 52a5990be3495354aa113435e77bfcef,
         type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -112.80002
+      propertyPath: m_LocalPosition.z
+      value: 36
       objectReference: {fileID: 0}
-    - target: {fileID: 3470155842891158098, guid: 52a5990be3495354aa113435e77bfcef,
+    - target: {fileID: 5134427186516226771, guid: 52a5990be3495354aa113435e77bfcef,
         type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -170.8
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RetryButton
       objectReference: {fileID: 0}
-    - target: {fileID: 7491144703296375236, guid: 52a5990be3495354aa113435e77bfcef,
+    - target: {fileID: 6602858937262147579, guid: 52a5990be3495354aa113435e77bfcef,
         type: 3}
-      propertyPath: towerPrice
-      value: 500
+      propertyPath: m_Text
+      value: Retry
+      objectReference: {fileID: 0}
+    - target: {fileID: 8769467577305686873, guid: 52a5990be3495354aa113435e77bfcef,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RetryButton
       objectReference: {fileID: 0}
     - target: {fileID: 9016074298054860650, guid: 52a5990be3495354aa113435e77bfcef,
         type: 3}
@@ -19953,11 +19940,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9016074299375666047, guid: 52a5990be3495354aa113435e77bfcef,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -161.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52a5990be3495354aa113435e77bfcef, type: 3}

@@ -971,11 +971,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 92020185}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99ec2eb9b0fcc2f409e1352afd7050c7, type: 3}
+  m_Script: {fileID: 11500000, guid: a459952ed7eda7d4aa57272e4e293cd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 4805237489743276558, guid: 6550c2b14c91b934c8727fb0326737fc,
-    type: 3}
+  waves:
+  - waveName: Wave1
+    noOfHumans: 3
+    typeOfHumans:
+    - {fileID: 4805237489743276558, guid: 6550c2b14c91b934c8727fb0326737fc, type: 3}
+    spawnInterval: 3
+  - waveName: Wave2
+    noOfHumans: 5
+    typeOfHumans:
+    - {fileID: 4805237489743276558, guid: 6550c2b14c91b934c8727fb0326737fc, type: 3}
+    spawnInterval: 1
+  - waveName: Wave3
+    noOfHumans: 7
+    typeOfHumans:
+    - {fileID: 4805237489743276558, guid: 6550c2b14c91b934c8727fb0326737fc, type: 3}
+    spawnInterval: 1
   spawnPoint: {fileID: 1322917440}
 --- !u!1001 &94504618
 PrefabInstance:

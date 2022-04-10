@@ -35,6 +35,14 @@ public class WinLoseConditions : MonoBehaviour
             playerLost = true;
             loseScreenUI.SetActive(true);
         }
+
+        //if the player has completed the level
+        if(WaveSpawner.playerWon == true)
+        {
+            Time.timeScale = 0f;
+            Debug.Log("Player has won");
+            winScreenUI.SetActive(true);
+        }
     }
 
     public void RetryButton()
@@ -51,5 +59,10 @@ public class WinLoseConditions : MonoBehaviour
         Time.timeScale = 1f;
         Debug.Log("Attempting to quit");
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public void Continue()
+    {
+        SceneManager.LoadScene("LevelOne");
     }
 }

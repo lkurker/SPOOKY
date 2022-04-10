@@ -6,6 +6,9 @@ TagManager:
   tags:
   - human
   - bullet
+  - slowdownBullet
+  - missile
+  - explosion
   layers:
   - Default
   - TransparentFX

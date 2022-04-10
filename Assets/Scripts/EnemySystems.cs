@@ -8,10 +8,19 @@ public class EnemySystems : MonoBehaviour
     private int wavepointIndex = 0;
     public int health;
     public int moneyValue;
+    private float halfSpeed;
+
+    //boolean to determine if the enemy is a dancing boss or not
+    public bool canDance;
+    private float regenTime = 0;
+    public int regenAmount;
 
     void Start()
     {
         target = Waypoints.waypoints[0];
+
+        //we will use the half speed variable so that the enemy won't continuously get slower if they keep getting hit by the slowdown bullets
+        halfSpeed = speed / 2;
     }
 
     void Update()
@@ -34,6 +43,17 @@ public class EnemySystems : MonoBehaviour
         {
             GetNextWayPoint();
         }
+
+        if(canDance == true)
+        {
+            regenTime = regenTime + Time.deltaTime;
+
+            //after every second regen
+            if(regenTime >= 1)
+            {
+                health = health + regenAmount;
+            }
+        }
     }
 
     void GetNextWayPoint()
@@ -41,7 +61,18 @@ public class EnemySystems : MonoBehaviour
         //following the checkpoints from the array of waypoints in the hierarchy
         if(wavepointIndex >= Waypoints.waypoints.Length - 1)
         {
+            if(canDance == false)
+            {
+                HealthScript.health = HealthScript.health - health;
+            }
+            else
+            {
+                HealthScript.health = 0;
+            }
+            
+            
             Destroy(gameObject);
+            
         }
 
         if(wavepointIndex < Waypoints.waypoints.Length - 1)
@@ -59,6 +90,24 @@ public class EnemySystems : MonoBehaviour
         if(other.transform.tag == "bullet")
         {
             health = health - other.GetComponent<bulletMovement>().bulletPower;
+        }
+
+        //instance in which the bullet type slows down the enemy
+        else if(other.transform.tag == "slowdownBullet")
+        {
+            health = health - other.GetComponent<bulletMovement>().bulletPower;
+            
+            //if the enemy hasn't already been slown down, then slow their speed down
+            if(speed != halfSpeed)
+            {
+                speed = speed / 2;
+            }
+
+        }
+
+        if(other.transform.tag == "explosion")
+        {
+            health = health - other.GetComponent<ExplosionScript>().explosionPower;
         }
     }
 }

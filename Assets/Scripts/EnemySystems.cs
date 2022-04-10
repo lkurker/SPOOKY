@@ -10,6 +10,11 @@ public class EnemySystems : MonoBehaviour
     public int moneyValue;
     private float halfSpeed;
 
+    //boolean to determine if the enemy is a dancing boss or not
+    public bool canDance;
+    private float regenTime = 0;
+    public int regenAmount;
+
     void Start()
     {
         target = Waypoints.waypoints[0];
@@ -38,6 +43,17 @@ public class EnemySystems : MonoBehaviour
         {
             GetNextWayPoint();
         }
+
+        if(canDance == true)
+        {
+            regenTime = regenTime + Time.deltaTime;
+
+            //after every second regen
+            if(regenTime >= 1)
+            {
+                health = health + regenAmount;
+            }
+        }
     }
 
     void GetNextWayPoint()
@@ -45,7 +61,16 @@ public class EnemySystems : MonoBehaviour
         //following the checkpoints from the array of waypoints in the hierarchy
         if(wavepointIndex >= Waypoints.waypoints.Length - 1)
         {
-            HealthScript.health = HealthScript.health - health;
+            if(canDance == false)
+            {
+                HealthScript.health = HealthScript.health - health;
+            }
+            else
+            {
+                HealthScript.health = 0;
+            }
+            
+            
             Destroy(gameObject);
             
         }

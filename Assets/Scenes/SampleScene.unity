@@ -19811,26 +19811,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3769326123388170925, guid: 52a5990be3495354aa113435e77bfcef,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 36
-      objectReference: {fileID: 0}
-    - target: {fileID: 5134427186516226771, guid: 52a5990be3495354aa113435e77bfcef,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: RetryButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 6602858937262147579, guid: 52a5990be3495354aa113435e77bfcef,
-        type: 3}
-      propertyPath: m_Text
-      value: Retry
-      objectReference: {fileID: 0}
-    - target: {fileID: 8769467577305686873, guid: 52a5990be3495354aa113435e77bfcef,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: RetryButton
-      objectReference: {fileID: 0}
     - target: {fileID: 9016074298054860650, guid: 52a5990be3495354aa113435e77bfcef,
         type: 3}
       propertyPath: m_Name

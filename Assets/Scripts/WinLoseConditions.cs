@@ -12,12 +12,14 @@ public class WinLoseConditions : MonoBehaviour
 
     //bool to set so that the player cannot pause during the win or lose screen
     public static bool canPause;
+    private bool playerLost;
 
     void Start()
     {
         winScreenUI.SetActive(false);
         loseScreenUI.SetActive(false);
         canPause = true;
+        playerLost = false;
         Time.timeScale = 1f;
     }
 
@@ -25,10 +27,12 @@ public class WinLoseConditions : MonoBehaviour
     void Update()
     {
         //condition for losing the game
-        if(HealthScript.health <= 0)
+        if(HealthScript.health <= 0 && playerLost == false)
         {
             Time.timeScale = 0f;
+            Debug.Log("Testing screen");
             //set the loseScreen to become active
+            playerLost = true;
             loseScreenUI.SetActive(true);
         }
     }
@@ -36,6 +40,8 @@ public class WinLoseConditions : MonoBehaviour
     public void RetryButton()
     {
         //retry the level the user is currently on
+        loseScreenUI.SetActive(false);
+        CurrencyScript.currency = 500;
         SceneManager.LoadScene("SampleScene");
     }
 
@@ -43,6 +49,7 @@ public class WinLoseConditions : MonoBehaviour
     {
         //send the user back to the main menu
         Time.timeScale = 1f;
+        Debug.Log("Attempting to quit");
         SceneManager.LoadScene("MainMenu");
     }
 }

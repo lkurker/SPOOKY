@@ -9,6 +9,11 @@ public class HealthScript : MonoBehaviour
     public static int health = 100;
     public Text Health;
 
+    void Start()
+    {
+        health = 100;
+    }
+
     // Update is called once per frame
     void Update()
     {

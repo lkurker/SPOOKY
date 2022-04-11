@@ -165,7 +165,7 @@ MonoBehaviour:
   partToRotate: {fileID: 7812873597578594752}
   firePoint: {fileID: 1658513703678808781}
   towerLockOn: 0
-  firePower: 2
+  firePower: 20
 --- !u!1 &8846321171776229053
 GameObject:
   m_ObjectHideFlags: 0

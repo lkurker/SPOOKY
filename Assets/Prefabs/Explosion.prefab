@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionDuration: 3
-  explosionPower: 5
+  explosionPower: 50
 --- !u!54 &-1760231114877292882
 Rigidbody:
   m_ObjectHideFlags: 0

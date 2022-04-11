@@ -10,6 +10,7 @@ TagManager:
   - missile
   - explosion
   - DeathNoise
+  - EnemyHitOne
   layers:
   - Default
   - TransparentFX

@@ -17,7 +17,8 @@ public class EnemySystems : MonoBehaviour
     public int regenCooldown;
 
     private AudioSource EnemyDeathOne;
-    private bool isActive;
+    private AudioSource EnemyHitOne;
+    
 
     void Start()
     {
@@ -26,7 +27,9 @@ public class EnemySystems : MonoBehaviour
         //we will use the half speed variable so that the enemy won't continuously get slower if they keep getting hit by the slowdown bullets
         halfSpeed = speed / 2;
 
-        EnemyDeathOne = GameObject.FindGameObjectWithTag("DeathNoise").GetComponent<AudioSource>();        isActive = true;
+        EnemyDeathOne = GameObject.FindGameObjectWithTag("DeathNoise").GetComponent<AudioSource>();
+        EnemyHitOne = GameObject.FindGameObjectWithTag("EnemyHitOne").GetComponent<AudioSource>();
+        
     }
 
     void Update()
@@ -34,14 +37,13 @@ public class EnemySystems : MonoBehaviour
 
         
         //if statement to determine if the enemy is dead or not
-        if (health <= 0 && isActive == true)
+        if (health <= 0)
         {
             EnemyDeathOne.Play();
             //add money to the player's bank account
             CurrencyScript.currency = CurrencyScript.currency + moneyValue;
-            //gameObject.SetActive(false);
-            isActive = false;
-            DestroyEnemy();
+            
+            Destroy(gameObject);
 
             //return so that the rest of the code does not run
             return;
@@ -120,10 +122,12 @@ public class EnemySystems : MonoBehaviour
         {
             health = health - other.GetComponent<ExplosionScript>().explosionPower;
         }
+
+        if(health > 0)
+        {
+            EnemyHitOne.Play();
+        }
     }
 
-    void DestroyEnemy()
-    {
-        Destroy(gameObject);
-    }
+   
 }

@@ -9,10 +9,13 @@ public class WinLoseConditions : MonoBehaviour
     public GameObject loseScreenUI;
     //winScreenUI
     public GameObject winScreenUI;
+    //pauseMenuUI
+    public GameObject pauseMenuUI;
 
     //bool to set so that the player cannot pause during the win or lose screen
     public static bool canPause;
     private bool playerLost;
+    private bool isPaused;
 
     void Start()
     {
@@ -20,6 +23,8 @@ public class WinLoseConditions : MonoBehaviour
         loseScreenUI.SetActive(false);
         canPause = true;
         playerLost = false;
+        pauseMenuUI.SetActive(false);
+        isPaused = false;
         Time.timeScale = 1f;
     }
 
@@ -30,7 +35,7 @@ public class WinLoseConditions : MonoBehaviour
         if(HealthScript.health <= 0 && playerLost == false)
         {
             Time.timeScale = 0f;
-            Debug.Log("Testing screen");
+            
             //set the loseScreen to become active
             playerLost = true;
             loseScreenUI.SetActive(true);
@@ -40,8 +45,18 @@ public class WinLoseConditions : MonoBehaviour
         if(WaveSpawner.playerWon == true && HealthScript.health > 0)
         {
             Time.timeScale = 0f;
-            Debug.Log("Player has won");
+            
             winScreenUI.SetActive(true);
+        }
+
+        //check to see if the user has pressed the esc key
+        if (WaveSpawner.playerWon == false && playerLost == false && isPaused == false && Input.GetKeyDown(KeyCode.Escape))
+        {
+            Pause();
+        }
+        else if(WaveSpawner.playerWon == false && playerLost == false && isPaused == true && Input.GetKeyDown(KeyCode.Escape))
+        {
+            Resume();
         }
     }
 
@@ -64,5 +79,19 @@ public class WinLoseConditions : MonoBehaviour
     public void Continue()
     {
         SceneManager.LoadScene("LevelOne");
+    }
+
+    public void Resume()
+    {
+        pauseMenuUI.SetActive(false);
+        Time.timeScale = 1f;
+        isPaused = false;
+    }
+
+    public void Pause()
+    {
+        pauseMenuUI.SetActive(true);
+        Time.timeScale = 0f;
+        isPaused = true;
     }
 }

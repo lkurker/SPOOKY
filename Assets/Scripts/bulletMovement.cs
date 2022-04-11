@@ -81,6 +81,7 @@ public class bulletMovement : MonoBehaviour
             if (this.transform.tag == "missile")
             {
                 Instantiate(explosion, this.transform.position, this.transform.rotation);
+                Debug.Log("BOOM");
                 targetHit();
             }
             else

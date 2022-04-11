@@ -11,6 +11,7 @@ TagManager:
   - explosion
   - DeathNoise
   - EnemyHitOne
+  - TowerBuildingOne
   layers:
   - Default
   - TransparentFX

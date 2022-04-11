@@ -12,6 +12,8 @@ public class NodeScript : MonoBehaviour
     public static bool draggingTower;
     private bool towerPlaced = false;
 
+    private AudioSource TowerBuildingOne;
+
     //array of Gameobjects to place our four towers in
     public GameObject[] towers;
     private GameObject tower;
@@ -33,6 +35,9 @@ public class NodeScript : MonoBehaviour
 
         //setting the tower position to this nodes position plus the offset defined by us
         towerPosition = this.transform.position + offset;
+
+        // fetch tower building sound object
+        TowerBuildingOne = GameObject.FindGameObjectWithTag("TowerBuildingOne").GetComponent<AudioSource>();
         
     }
 
@@ -73,7 +78,7 @@ public class NodeScript : MonoBehaviour
                 towerPlaced = true;
 
                 //play build sound
-
+                TowerBuildingOne.Play();
             }
             
 

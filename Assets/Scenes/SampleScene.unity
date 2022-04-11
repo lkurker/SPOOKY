@@ -20079,6 +20079,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1605880972332969080, guid: 1c622fbd598f71845b8cae9fadf3366f,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6127261711318003490, guid: 1c622fbd598f71845b8cae9fadf3366f,
         type: 3}
       propertyPath: m_PlayOnAwake
@@ -20143,6 +20148,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8338313589648372188, guid: 1c622fbd598f71845b8cae9fadf3366f,
+        type: 3}
+      propertyPath: m_TagString
+      value: TowerBuildingOne
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c622fbd598f71845b8cae9fadf3366f, type: 3}

@@ -9,6 +9,7 @@ TagManager:
   - slowdownBullet
   - missile
   - explosion
+  - DeathNoise
   layers:
   - Default
   - TransparentFX

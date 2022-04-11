@@ -37,7 +37,7 @@ public class WinLoseConditions : MonoBehaviour
         }
 
         //if the player has completed the level
-        if(WaveSpawner.playerWon == true)
+        if(WaveSpawner.playerWon == true && HealthScript.health > 0)
         {
             Time.timeScale = 0f;
             Debug.Log("Player has won");

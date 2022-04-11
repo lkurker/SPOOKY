@@ -72,6 +72,8 @@ public class NodeScript : MonoBehaviour
                 //setting the bool to true so that another tower cannot be placed on this node 
                 towerPlaced = true;
 
+                //play build sound
+
             }
             
 

@@ -10,6 +10,8 @@ public class EnemySystems : MonoBehaviour
     public int moneyValue;
     private float halfSpeed;
 
+    public AudioSource EnemyDeathOne;
+
     void Start()
     {
         target = Waypoints.waypoints[0];
@@ -25,8 +27,9 @@ public class EnemySystems : MonoBehaviour
         {
             //add money to the player's bank account
             CurrencyScript.currency = CurrencyScript.currency + moneyValue;
-
+            
             Destroy(gameObject);
+            EnemyDeathOne.Play();
 
             //return so that the rest of the code does not run
             return;
@@ -61,6 +64,8 @@ public class EnemySystems : MonoBehaviour
     //we will check for collisions with bullets to detemrine if their health should go away
     private void OnTriggerEnter(Collider other)
     {
+        // play hit sound
+
         //check the tag of what is entering the object
         if(other.transform.tag == "bullet")
         {

@@ -11,6 +11,7 @@ public class ExplosionScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // explosion sound
         
         Invoke("endExplosion", explosionDuration);
     }

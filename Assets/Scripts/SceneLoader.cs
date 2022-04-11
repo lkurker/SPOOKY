@@ -27,7 +27,7 @@ public class SceneLoader : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene("LevelOne");
+            SceneManager.LoadScene("SampleScene");
         }
 
         // Debug.Log("Launch lvl 1");
@@ -43,7 +43,7 @@ public class SceneLoader : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
-        Debug.Log("Quit!");
+        // Debug.Log("Quit!");
     }
 
     // level select screen

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Sprites/Tower 1 Icon_ccexpress.png.meta
 guid: 8ba428719c57c2249b61fbf048e18a8a
+=======
+guid: c8199c8d510cfc648b1371093794d1de
+>>>>>>> 297604f5b8fa332c96d0c306aaf0bca68de21f32:Assets/Sprites/Tower 2 Icon_ccexpress.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

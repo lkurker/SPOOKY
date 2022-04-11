@@ -1,9 +1,13 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Assets/Sprites/Tower 2 Icon_ccexpress.png.meta
-guid: eb6dc193c7bac8a47a606abd9ae376b0
+<<<<<<< HEAD
+<<<<<<< HEAD:Assets/Sprites/Tower 1 Icon_ccexpress.png.meta
+guid: 8ba428719c57c2249b61fbf048e18a8a
 =======
-guid: af6bb44de3bbe764a857e3514456fbd4
->>>>>>> 297604f5b8fa332c96d0c306aaf0bca68de21f32:Assets/Sprites/Tower 3 Icon_ccexpress.png.meta
+guid: c8199c8d510cfc648b1371093794d1de
+>>>>>>> 297604f5b8fa332c96d0c306aaf0bca68de21f32:Assets/Sprites/Tower 2 Icon_ccexpress.png.meta
+=======
+guid: beb6c6e67cc1d08409bb3a24abe194f8
+>>>>>>> 297604f5b8fa332c96d0c306aaf0bca68de21f32
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

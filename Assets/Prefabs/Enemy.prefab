@@ -109,9 +109,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  health: 1
+  health: 10
   moneyValue: 20
   canDance: 0
   regenAmount: 0
   regenCooldown: 0
-  EnemyDeathOne: {fileID: 0}

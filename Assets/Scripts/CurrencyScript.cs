@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class CurrencyScript : MonoBehaviour
 {
     //a static int variable that will keep track of our current currency
-    public static int currency = 500;
+    public static int currency = 5000;
     public Text moneyText;
     
 

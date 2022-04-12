@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 555de8f3a73fedb4693e4eda61a83d69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionDuration: 3
+  explosionDuration: 1
   explosionPower: 50
 --- !u!54 &-1760231114877292882
 Rigidbody:

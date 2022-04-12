@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  health: 100
+  health: 25
   moneyValue: 50
   canDance: 0
   regenAmount: 0
